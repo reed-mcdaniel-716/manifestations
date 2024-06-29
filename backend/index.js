@@ -6,7 +6,6 @@ const morgan = require("morgan");
 const db = require("./db");
 
 const app = express();
-const PORT = process.env.PORT || 4000;
 
 // Logging + Formatting
 //const loggingFormat = process.env.NODE_ENV === "dev" ? "dev" : "tiny";
@@ -32,6 +31,7 @@ app.get('/manifestation', async (req, resp) => {
   }
 });
 
+const PORT = `${process.env.SERVER_PORT}`;
 app.listen(PORT, () => {
   console.log(`[server]: Server is running at http://localhost:${PORT}`);
 });
